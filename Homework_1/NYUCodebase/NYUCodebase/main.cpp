@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
 		
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 		
-		//create lasers
+		//create meteor
 		glBindTexture(GL_TEXTURE_2D, meteor);
 		program.setModelMatrix(modelMatrixMeteor);
 		modelMatrixMeteor.Translate((-1)*elapsed, 0.0, 0.0);
