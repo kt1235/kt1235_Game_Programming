@@ -192,8 +192,6 @@ void Update(){
 	if (ball.y <= -0.85f){
 		ball.direction_y *= -1;
 	}
-
-
 }
 
 

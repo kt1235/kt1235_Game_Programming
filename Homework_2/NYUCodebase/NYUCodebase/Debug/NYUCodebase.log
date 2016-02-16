@@ -1,16 +1,17 @@
-﻿Build started 2/15/2016 10:36:59 PM.
-     1>Project "D:\GitHub\kt1235_Game_programming\Homework _2\NYUCodebase\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2/15/2016 11:01:30 PM.
+     1>Project "D:\GitHub\kt1235_Game_programming\Homework_2\NYUCodebase\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Microsoft Visual Studio 2013\VC\bin\CL.exe /c /IC:\SDL2\include /IC:\SDL2_image\include /IC:\glew\include /IC:\SDL2_mixer\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDOWS /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
        Link:
-         D:\Microsoft Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitHub\kt1235_Game_programming\Homework _2\NYUCodebase\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2_mixer\lib\x86 /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 /LIBPATH:C:\glew\lib\Release\Win32 SDL2.lib SDL2_mixer.lib glew32.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitHub\kt1235_Game_programming\Homework _2\NYUCodebase\Debug\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitHub\kt1235_Game_programming\Homework _2\NYUCodebase\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\main.obj
+         D:\Microsoft Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitHub\kt1235_Game_programming\Homework_2\NYUCodebase\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2_mixer\lib\x86 /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 /LIBPATH:C:\glew\lib\Release\Win32 SDL2.lib SDL2_mixer.lib glew32.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitHub\kt1235_Game_programming\Homework_2\NYUCodebase\Debug\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitHub\kt1235_Game_programming\Homework_2\NYUCodebase\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\main.obj
          Debug\Matrix.obj
          Debug\ShaderProgram.obj
          Debug\Entity.obj
-         NYUCodebase.vcxproj -> D:\GitHub\kt1235_Game_programming\Homework _2\NYUCodebase\Debug\NYUCodebase.exe
-     1>Done Building Project "D:\GitHub\kt1235_Game_programming\Homework _2\NYUCodebase\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+         NYUCodebase.vcxproj -> D:\GitHub\kt1235_Game_programming\Homework_2\NYUCodebase\Debug\NYUCodebase.exe
+     1>Done Building Project "D:\GitHub\kt1235_Game_programming\Homework_2\NYUCodebase\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.27
+Time Elapsed 00:00:00.87
