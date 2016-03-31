@@ -38,63 +38,8 @@ GLuint LoadTexture(const char *image_path) {
 
 	return textureID;
 }
-/*
-class MixerSound{
-public:
-	Uint32 offset;
-	Uint32 length;
-	Uint8 *buffer;
-	float volume;
-	SDL_AudioFormat format;
-	bool loaded;
-	bool playing;
-	bool loop;
 
-};
 
-class DemoApp {
-public: 
-	std::vector<MixerSound> mixerSounds;
-
-	int loadSound(const char *soundFile) {
-		Uint8 *buffer;
-		SDL_AudioSpec spec;
-		Uint32 bufferSize;
-
-		if (SDL_LoadWAV(soundFile, &spec, &buffer, &bufferSize) == NULL) {
-			return -1;
-		}
-		SDL_AudioCVT cvt;
-		SDL_BuildAudioCVT(&cvt, spec.format, spec.channels, spec.freq, deviceSpec.format, deviceSpec.channels, deviceSpec.freq);
-		cvt.len = bufferSize;
-		cvt.buf = new Uint8[bufferSize*cvt.len_mult];
-		memcpy(cvt.buf, buffer, bufferSize);
-
-		SDL_ConvertAudio(&cvt);
-		SDL_FreeWAV(buffer);
-
-		MixerSound sound;
-		sound.buffer = cvt.buf;
-		sound.length = cvt.len_cvt;
-		sound.loaded = true;
-		sound.offset = 0;
-		sound.format = deviceSpec.format;
-		sound.volume = 1.0;
-		sound.playing = false;
-		mixerSounds.push_back(sound);
-
-		return mixerSounds.size() - 1;
-	}
-
-	void playSound(int soundIndex, bool loop) {
-		if (soundIndex >= 0 && soundIndex < mixerSounds.size()) {
-			mixerSounds[soundIndex].playing = true;
-			mixerSounds[soundIndex].offset = 0;
-			mixerSounds[soundIndex].loop = loop;
-		}
-	}
-};
-*/
 void Setup() {
 	SDL_Init(SDL_INIT_VIDEO);
 	displayWindow = SDL_CreateWindow("Pong", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
