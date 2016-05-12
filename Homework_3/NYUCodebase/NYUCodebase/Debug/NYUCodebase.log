@@ -1,20 +1,9 @@
-﻿Build started 3/3/2016 11:11:47 AM.
+﻿Build started 5/7/2016 5:08:55 PM.
      1>Project "D:\GitHub\kt1235_Game_programming\Homework_3\NYUCodebase\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Microsoft Visual Studio 2013\VC\bin\CL.exe /c /IC:\SDL2\include /IC:\SDL2_image\include /IC:\glew\include /IC:\SDL2_mixer\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDOWS /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>d:\github\kt1235_game_programming\homework_3\nyucodebase\nyucodebase\main.cpp(192): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>d:\github\kt1235_game_programming\homework_3\nyucodebase\nyucodebase\main.cpp(207): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\github\kt1235_game_programming\homework_3\nyucodebase\nyucodebase\main.cpp(70): warning C4715: 'CollisionCheck' : not all control paths return a value
-       Link:
-         D:\Microsoft Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitHub\kt1235_Game_programming\Homework_3\NYUCodebase\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2_mixer\lib\x86 /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 /LIBPATH:C:\glew\lib\Release\Win32 SDL2.lib SDL2_mixer.lib glew32.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitHub\kt1235_Game_programming\Homework_3\NYUCodebase\Debug\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitHub\kt1235_Game_programming\Homework_3\NYUCodebase\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\main.obj
-         Debug\Matrix.obj
-         Debug\ShaderProgram.obj
-         Debug\Entity.obj
-         Debug\DrawSpriteSheetSprite.obj
+     1>Link:
          NYUCodebase.vcxproj -> D:\GitHub\kt1235_Game_programming\Homework_3\NYUCodebase\Debug\NYUCodebase.exe
      1>Done Building Project "D:\GitHub\kt1235_Game_programming\Homework_3\NYUCodebase\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.77
+Time Elapsed 00:00:00.26
