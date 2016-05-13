@@ -138,7 +138,6 @@ void Setup() {
 #endif
 	done = false;
 
-	srand((unsigned int)time(NULL));
 	program = new ShaderProgram(RESOURCE_FOLDER"vertex_textured.glsl",RESOURCE_FOLDER"fragment_textured.glsl");
 	//program = new ShaderProgram(RESOURCE_FOLDER"vertex.glsl", RESOURCE_FOLDER"fragment.glsl");
 	tileTexture = LoadTexture(RESOURCE_FOLDER"sheet_4.png");
@@ -149,12 +148,15 @@ void Setup() {
 	projectionMatrix.setOrthoProjection(-3.55f, 3.55f, -2.0f, 2.0f, -1.0f, 1.0f);
 	// ======================================================
 	// LEVEL ONE SETUP
+	// Works kinda like a tile map, instead of a .txt file, it just takes the png and cuts
+	// it up into triangles and store specific parts of the .png to levelData, then renders those specific parts only.
 	// FILL levelData with a 20 x 90 grid with either the static tile or empty tile.
 	// Sets up border (the border tiles on left, above and right
+	srand((unsigned int)time(NULL)); // rand() sometimes returns the same exact number.
 	for (int i = 0; i < LEVEL_HEIGHT; i++) {
 		for (int j = 0; j < LEVEL_WIDTH; j++) {
 			if (i == 0 || j == 0 || j == LEVEL_WIDTH - 1)
-				levelData[i][j] = 190; // Static tile #190 (blue tile thing)
+				levelData[i][j] = 190; // Static tile #190 (blue tile)
 			else
 				levelData[i][j] = 254; //Emptiness
 		}
@@ -261,7 +263,7 @@ void Setup() {
 }
 
 void RenderTitle() {
-
+	viewMatrix.identity();
 	program->setProjectionMatrix(projectionMatrix);
 	program->setModelMatrix(modelMatrix);
 	program->setViewMatrix(viewMatrix);
@@ -283,7 +285,7 @@ void RenderTitle() {
 	modelMatrix.identity();
 	modelMatrix.Translate(-3.3f, -1.00f, 0.0f);
 	program->setModelMatrix(modelMatrix);
-	DrawText(program, titleScreenTexture, "1=Easy, 2=Hard, 3=Extreme", 0.2f, 0.0f);
+	DrawText(program, titleScreenTexture, "1=Easy, 2=Hard, 3=Extreme,M=Menu", 0.2f, 0.0f);
 	modelMatrix.identity();
 	modelMatrix.Translate(-1.0f, -1.50f, 0.0f);
 	program->setModelMatrix(modelMatrix);
@@ -310,7 +312,7 @@ void RenderLevelOne() {
 	vector<float> vertexData;
 	vector<float> texCoordData;
 
-	int noDraws = 0;
+	int emptySpace = 0;
 	for (int y = 0; y < LEVEL_HEIGHT; y++) {
 		for (int x = 0; x < LEVEL_WIDTH; x++) {
 			if (levelData[y][x] != 254) {
@@ -341,7 +343,7 @@ void RenderLevelOne() {
 				});
 			}
 			else
-				noDraws++;
+				emptySpace++;
 		}
 	}
 
@@ -351,7 +353,7 @@ void RenderLevelOne() {
 	glEnableVertexAttribArray(program->texCoordAttribute);
 
 	glBindTexture(GL_TEXTURE_2D, tileTexture);
-	glDrawArrays(GL_TRIANGLES, 0, 6 * (LEVEL_HEIGHT * LEVEL_WIDTH - noDraws));
+	glDrawArrays(GL_TRIANGLES, 0, 6 * (LEVEL_HEIGHT * LEVEL_WIDTH - emptySpace));
 
 	glDisableVertexAttribArray(program->positionAttribute);
 	glDisableVertexAttribArray(program->texCoordAttribute);
@@ -384,7 +386,7 @@ void RenderLevelTwo() {
 	vector<float> vertexData;
 	vector<float> texCoordData;
 
-	int noDraws = 0;
+	int emptySpace = 0;
 	for (int y = 0; y < LEVEL_HEIGHT; y++) {
 		for (int x = 0; x < LEVEL_WIDTH; x++) {
 			if (level2Data[y][x] != 254) {
@@ -415,7 +417,7 @@ void RenderLevelTwo() {
 				});
 			}
 			else
-				noDraws++;
+				emptySpace++;
 		}
 	}
 
@@ -425,11 +427,13 @@ void RenderLevelTwo() {
 	glEnableVertexAttribArray(program->texCoordAttribute);
 
 	glBindTexture(GL_TEXTURE_2D, tileTexture);
-	glDrawArrays(GL_TRIANGLES, 0, 6 * (LEVEL_HEIGHT * LEVEL_WIDTH - noDraws));
+	glDrawArrays(GL_TRIANGLES, 0, 6 * (LEVEL_HEIGHT * LEVEL_WIDTH - emptySpace));
 
 	glDisableVertexAttribArray(program->positionAttribute);
 	glDisableVertexAttribArray(program->texCoordAttribute);
 
+	// draw entities (only the player)
+	// intented to be 2 player game
 	for (size_t i = 0; i < entities.size(); i++) {
 		entities[i]->Draw(program);
 	}
@@ -459,7 +463,7 @@ void RenderLevelThree() {
 	vector<float> vertexData;
 	vector<float> texCoordData;
 
-	int noDraws = 0;
+	int emptySpace = 0;
 	for (int y = 0; y < LEVEL_HEIGHT; y++) {
 		for (int x = 0; x < LEVEL_WIDTH; x++) {
 			if (level3Data[y][x] != 254) {
@@ -490,7 +494,7 @@ void RenderLevelThree() {
 				});
 			}
 			else
-				noDraws++;
+				emptySpace++;
 		}
 	}
 
@@ -500,7 +504,7 @@ void RenderLevelThree() {
 	glEnableVertexAttribArray(program->texCoordAttribute);
 
 	glBindTexture(GL_TEXTURE_2D, tileTexture);
-	glDrawArrays(GL_TRIANGLES, 0, 6 * (LEVEL_HEIGHT * LEVEL_WIDTH - noDraws));
+	glDrawArrays(GL_TRIANGLES, 0, 6 * (LEVEL_HEIGHT * LEVEL_WIDTH - emptySpace));
 
 	glDisableVertexAttribArray(program->positionAttribute);
 	glDisableVertexAttribArray(program->texCoordAttribute);
@@ -508,6 +512,7 @@ void RenderLevelThree() {
 	for (size_t i = 0; i < entities.size(); i++) {
 		entities[i]->Draw(program);
 	}
+	// if life > 0, render hearts. set their position relative to the player
 	if (lifeCounter > 0) {
 		for (size_t i = 0; i < lifeCounter; i++) {
 			lives[i]->Draw(program);
@@ -516,6 +521,7 @@ void RenderLevelThree() {
 
 		}
 	}
+	// render the fire balls
 	for (size_t i = 0; i < fireballs.size(); i++) {
 		fireballs[i]->Draw(program);
 	}
@@ -592,7 +598,7 @@ void RenderLoser() {
 void Update(float elapsed) {
 
 	int currX = 0, currY = 0;
-	//Global entities update
+
 
 	for (size_t i = 0; i < entities.size(); i++){
 
@@ -664,7 +670,7 @@ void Update(float elapsed) {
 			else if (currentState == GAME_TWO_STATE) {
 
 
-				//Timer to randomly change friction every 4 seconds
+				//Knocks back the player by a random amount every 4 seconds
 				timer += elapsed;
 				screenShakeValue += elapsed;
 				if (timer >= 4.0f) {
@@ -739,6 +745,8 @@ void Update(float elapsed) {
 			else if (currentState == GAME_THREE_STATE) {
 				invincibilityTimer += elapsed;
 
+				// Randomizes fireball to a certain extent.
+				// Randomizes the X and Y starting points of the fire ball based on player location.
 				for (size_t i = 0; i < fireballs.size(); i++) {
 					fireballs[i]->x -= 0.01f;
 					if (fireballs[i]->x < player->x - 3.0f) {
@@ -873,12 +881,12 @@ void Update() {
 			currentState = TITLE_STATE;
 		}
 	}
-		
-	
-	if (keys[SDL_SCANCODE_ESCAPE]) {
+	else if (keys[SDL_SCANCODE_M]) {
 		if (currentState != TITLE_STATE) {
 			currentState = TITLE_STATE;
+			resetGame();
 		}
+		
 		else CleanUp();
 	}
 
@@ -892,6 +900,7 @@ bool ProcessEvents() {
 		if (event.type == SDL_QUIT || event.type == SDL_WINDOWEVENT_CLOSE) {
 			return false;
 		}
+		if (keys[SDL_SCANCODE_ESCAPE]) { return false; }
 
 		return true;
 

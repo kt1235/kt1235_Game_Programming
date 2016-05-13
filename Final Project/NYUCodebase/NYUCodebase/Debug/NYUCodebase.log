@@ -1,11 +1,7 @@
-﻿Build started 5/12/2016 2:06:22 PM.
+﻿Build started 5/12/2016 8:14:06 PM.
      1>Project "D:\GitHub\kt1235_Game_programming\Final Project\NYUCodebase\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Microsoft Visual Studio 2013\VC\bin\CL.exe /c /IC:\SDL2\include /IC:\SDL2_image\include /IC:\glew\include /IC:\SDL2_mixer\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDOWS /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Entity.cpp main.cpp Matrix.cpp ShaderProgram.cpp SheetSprite.cpp Vector.cpp
-         Vector.cpp
-         SheetSprite.cpp
-         ShaderProgram.cpp
-         Matrix.cpp
+         D:\Microsoft Visual Studio 2013\VC\bin\CL.exe /c /IC:\SDL2\include /IC:\SDL2_image\include /IC:\glew\include /IC:\SDL2_mixer\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDOWS /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
      1>d:\github\kt1235_game_programming\final project\nyucodebase\nyucodebase\main.cpp(363): warning C4018: '<' : signed/unsigned mismatch
      1>d:\github\kt1235_game_programming\final project\nyucodebase\nyucodebase\main.cpp(437): warning C4018: '<' : signed/unsigned mismatch
@@ -86,11 +82,6 @@
      1>d:\github\kt1235_game_programming\final project\nyucodebase\nyucodebase\main.cpp(810): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
                  d:\github\kt1235_game_programming\final project\nyucodebase\nyucodebase\main.cpp(742) : definition of 'i' ignored
                  d:\github\kt1235_game_programming\final project\nyucodebase\nyucodebase\main.cpp(597) : definition of 'i' used
-         Entity.cpp
-     1>d:\github\kt1235_game_programming\final project\nyucodebase\nyucodebase\entity.cpp(109): warning C4101: 'collidedLeft' : unreferenced local variable
-     1>d:\github\kt1235_game_programming\final project\nyucodebase\nyucodebase\entity.cpp(109): warning C4101: 'collidedBottom' : unreferenced local variable
-     1>d:\github\kt1235_game_programming\final project\nyucodebase\nyucodebase\entity.cpp(109): warning C4101: 'collidedTop' : unreferenced local variable
-         Generating Code...
        Link:
          D:\Microsoft Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitHub\kt1235_Game_programming\Final Project\NYUCodebase\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2_mixer\lib\x86 /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 /LIBPATH:C:\glew\lib\Release\Win32 SDL2.lib SDL2_mixer.lib glew32.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitHub\kt1235_Game_programming\Final Project\NYUCodebase\Debug\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitHub\kt1235_Game_programming\Final Project\NYUCodebase\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\Entity.obj
          Debug\main.obj
@@ -98,10 +89,9 @@
          Debug\ShaderProgram.obj
          Debug\SheetSprite.obj
          Debug\Vector.obj
-     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
          NYUCodebase.vcxproj -> D:\GitHub\kt1235_Game_programming\Final Project\NYUCodebase\Debug\NYUCodebase.exe
      1>Done Building Project "D:\GitHub\kt1235_Game_programming\Final Project\NYUCodebase\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.07
+Time Elapsed 00:00:00.98
